@@ -1,0 +1,20 @@
+<%- include("partials/header.ejs"); -%>
+
+<%newdairy.forEach((item) => {%>
+<%  if(item.title != 'contact'  && item.title != 'About'){%>
+    <h3><%= item.title %></h3>
+    <% if(item.title ==='Home'){%>
+        <p><%= item.post%></p>
+  <%  } else{%>
+      <p><%= item.post.substring(1,100) + " ..."%>
+      <a href="/posts/<%=item.title%>" >Read More</a></p>
+  <%}%>
+
+
+<%  } %>
+
+<%});%>
+
+
+
+<%- include("partials/footer.ejs") ;-%>
